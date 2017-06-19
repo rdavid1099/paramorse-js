@@ -105,4 +105,12 @@ describe('Queue handling data', function() {
     expect(q.pop(3)).to.deep.equal([1,0,1]);
     expect(q.count()).to.equal(2);
   });
+
+  it('returns false if pop amount is more than queue amount', function() {
+    var q = this.q;
+    q.push(1);
+
+    expect(q.pop(7)).to.deep.equal(false);
+    expect(q.pop(-7)).to.deep.equal(false);
+  });
 });
