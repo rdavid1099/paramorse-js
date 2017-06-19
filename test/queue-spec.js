@@ -44,6 +44,22 @@ describe('Queue handling data', function() {
     q.push(1);
     q.push(0);
 
-    expect(q.tail(2)).to.deep.equal([0,1])
+    expect(q.tail(2)).to.deep.equal([0,1]);
+  });
+
+  it('peeks at data at the front of the queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+
+    expect(q.peek()).to.equal(1);
+  });
+
+    it('peeks at data at the front of the queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+
+    expect(q.peek(2)).to.deep.equal([1,0]);
   });
 });
