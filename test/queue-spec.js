@@ -47,6 +47,14 @@ describe('Queue handling data', function() {
     expect(q.tail(2)).to.deep.equal([0,1]);
   });
 
+  it('returns false if tail amount is more than queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+
+    expect(q.tail(3)).to.deep.equal(false);
+  });
+
   it('peeks at data at the front of the queue', function() {
     var q = this.q;
     q.push(1);
@@ -55,11 +63,19 @@ describe('Queue handling data', function() {
     expect(q.peek()).to.equal(1);
   });
 
-    it('peeks at data at the front of the queue', function() {
+  it('peeks at data at the front of the queue', function() {
     var q = this.q;
     q.push(1);
     q.push(0);
 
     expect(q.peek(2)).to.deep.equal([1,0]);
+  });
+
+  it('returns false if peek amount is more than queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+
+    expect(q.peek(3)).to.deep.equal(false);
   });
 });
