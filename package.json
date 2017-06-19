@@ -1,0 +1,31 @@
+{
+  "name": "paramorse-js",
+  "version": "1.0.0",
+  "description": "Redoing Turing School's ParaMorse project using NodeJS",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdavid1099/paramorse-js.git"
+  },
+  "keywords": [
+    "nodejs",
+    "paramorse",
+    "turing"
+  ],
+  "author": "Ryan Workman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdavid1099/paramorse-js/issues"
+  },
+  "homepage": "https://github.com/rdavid1099/paramorse-js#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "istanbul": "^0.4.5"
+  }
+}
