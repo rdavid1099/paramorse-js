@@ -78,4 +78,31 @@ describe('Queue handling data', function() {
 
     expect(q.peek(3)).to.deep.equal(false);
   });
+
+  it('pops the first element in the queue out', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+    q.push(1);
+    q.push(1);
+    q.push(0);
+
+    expect(q.count()).to.equal(5);
+    expect(q.pop()).to.equal(1);
+    expect(q.count()).to.equal(4);
+    expect(q.pop()).to.equal(0);
+    expect(q.count()).to.equal(3);
+  });
+
+  it('pops the given amount of elements from the queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+    q.push(1);
+    q.push(1);
+    q.push(0);
+
+    expect(q.pop(3)).to.deep.equal([1,0,1]);
+    expect(q.count()).to.equal(2);
+  });
 });
