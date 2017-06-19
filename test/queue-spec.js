@@ -39,4 +39,11 @@ describe('Queue handling data', function() {
     expect(q.tail()).to.equal(0);
   });
 
+  it('displays given number of tail of data', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+
+    expect(q.tail(2)).to.deep.equal([0,1])
+  });
 });
