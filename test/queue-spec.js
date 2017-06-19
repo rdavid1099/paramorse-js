@@ -113,4 +113,17 @@ describe('Queue handling data', function() {
     expect(q.pop(7)).to.deep.equal(false);
     expect(q.pop(-7)).to.deep.equal(false);
   });
+
+  it('clears out a queue', function() {
+    var q = this.q;
+    q.push(1);
+    q.push(0);
+    q.push(1);
+    q.push(1);
+    q.push(0);
+
+    expect(q.count()).to.equal(5);
+    q.clear();
+    expect(q.count()).to.equal(0);
+  });
 });
