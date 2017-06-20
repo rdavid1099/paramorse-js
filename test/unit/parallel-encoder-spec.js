@@ -24,4 +24,15 @@ describe('Parallel Encoder', function() {
     expect(pe.allStreams()).to.deep.equal([5,5,4,4]);
     done();
   });
+
+  it('loads given file into parallel encoders', function(done) {
+    setTimeout(function() {
+      var pe = this.pe;
+      pe.setupStreams(4);
+      pe.loadFile('testing.txt');
+
+      expect(pe.allStreams()).to.deep.equal([29,28,28,28]);
+    }, 2000);
+    done();
+  });
 });
