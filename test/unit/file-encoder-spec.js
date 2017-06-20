@@ -17,6 +17,7 @@ describe('File Encoder', function() {
 
   it('encodes loaded text file to bin/.encoded', function() {
     var fe = this.fe;
-    fe.encode('testing.txt', 'encoded-test.txt');
+
+    expect(fe.encode('testing.txt', 'encoded-test.txt')).to.equal(1015);
   });
 });
