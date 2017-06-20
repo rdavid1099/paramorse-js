@@ -11,4 +11,10 @@ describe('Word Encoder', function() {
 
     expect(enc.encode('Word')).to.equal('1011101110001110111011100010111010001110101');
   });
+
+  it('encodes multiple words', function() {
+    var enc = this.enc;
+
+    expect(enc.encode('A word')).to.equal('1011100000001011101110001110111011100010111010001110101');
+  });
 });
