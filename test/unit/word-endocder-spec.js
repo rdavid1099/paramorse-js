@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var Encoder = require('../lib/word-encoder');
+var expect = require('../test-helper').expect;
+var Encoder = require('../test-helper').encoder;
 
 describe('Word Encoder', function() {
   beforeEach(function() {

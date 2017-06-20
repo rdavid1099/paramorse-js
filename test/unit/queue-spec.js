@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var Queue = require('../lib/queue');
+var expect = require('../test-helper').expect;
+var Queue = require('../test-helper').queue;
 
 describe('Queue handling data', function() {
   beforeEach(function() {

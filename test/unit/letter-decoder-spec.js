@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var LetterDecoder = require('../lib/letter-decoder');
+var expect = require('../test-helper').expect;
+var LetterDecoder = require('../test-helper').letterDecoder;
 
 describe('Letter Decoder', function() {
   beforeEach(function() {
