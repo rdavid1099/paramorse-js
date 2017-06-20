@@ -11,4 +11,10 @@ describe('Word Decoder', function() {
 
     expect(dec.decode("1011101110001110111011100010111010001110101")).to.equal("word");
   });
+
+  it('decodes multiple words', function() {
+    var dec = this.dec;
+
+    expect(dec.decode('1011100000001011101110001110111011100010111010001110101')).to.equal('a word');
+  });
 });
