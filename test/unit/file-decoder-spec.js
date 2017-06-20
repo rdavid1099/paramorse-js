@@ -11,4 +11,10 @@ describe('File Decoder', function() {
 
     expect(fd.loadFile('encoded-test.txt')).to.equal(true);
   });
+
+  it('decodes given file and saves to results', function() {
+    var fd = this.fd;
+
+    expect(fd.decode('encoded-test.txt', 'testing-output.txt')).to.equal(113);
+  });
 });
