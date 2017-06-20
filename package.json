@@ -28,6 +28,7 @@
   "devDependencies": {
     "chai": "^4.0.2",
     "istanbul": "^0.4.5",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "rewire": "^2.5.2"
   }
 }

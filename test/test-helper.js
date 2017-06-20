@@ -5,5 +5,7 @@ module.exports = {
   letterEncoder: require('../lib/letter-encoder'),
   decoder: require('../lib/word-decoder'),
   encoder: require('../lib/word-encoder'),
-  stream: require('../lib/stream')
+  stream: require('../lib/stream'),
+  fileEncoder: require('../lib/file-encoder'),
+  fileDecoder: require('../lib/file-decoder')
 };
