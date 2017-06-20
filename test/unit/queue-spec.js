@@ -126,4 +126,15 @@ describe('Queue handling data', function() {
     q.clear();
     expect(q.count()).to.equal(0);
   });
+
+  it('converts data to a string', function() {
+    var q = this.q;
+    q.push('1');
+    q.push('0');
+    q.push('1');
+    q.push('1');
+    q.push('0');
+
+    expect(q.toString()).to.equal('10110');
+  });
 });
