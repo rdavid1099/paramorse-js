@@ -26,13 +26,17 @@ describe('Parallel Encoder', function() {
   });
 
   it('loads given file into parallel encoders', function(done) {
-    setTimeout(function() {
-      var pe = this.pe;
-      pe.setupStreams(4);
-      pe.loadFile('testing.txt');
+    var pe = this.pe;
+    pe.setupStreams(4);
+    pe.loadFile('testing.txt');
 
-      expect(pe.allStreams()).to.deep.equal([29,28,28,28]);
-    }, 2000);
+    expect(pe.allStreams()).to.deep.equal([29,28,28,28]);
+  });
+
+  it('writes encoded text to ./bin/.encoded/', function(done) {
+    var pe = this.pe;
+    pe.encodeFromFile('testing.txt', 4, 'test-output*.txt');
+
     done();
   });
 });
