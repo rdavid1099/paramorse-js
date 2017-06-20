@@ -41,5 +41,36 @@ describe('Streaming', function() {
     stream.receive("1");
 
     expect(stream.decode()).to.equal('hi');
+    expect(stream.empty()).to.deep.equal(true);
+    expect(stream.data()).to.equal('');
+  });
+
+  it('can encode data in stream', function() {
+    var stream = this.stream;
+    stream.receive("h");
+    stream.receive("e");
+    stream.receive("l");
+    stream.receive("l");
+    stream.receive("o");
+    stream.receive(" ");
+    stream.receive("w");
+    stream.receive("o");
+    stream.receive("r");
+    stream.receive("l");
+    stream.receive("d");
+
+    expect(stream.encode()).to.equal('101010100010001011101010001011101010001110111011100000001011101110001110111011100010111010001011101010001110101');
+    expect(stream.empty()).to.deep.equal(true);
+    expect(stream.data()).to.equal('');
+  });
+
+  it('can decode large data stream', function() {
+    var stream = this.stream;
+    '101010100010001011101010001011101010001110111011100000001011101110001110111011100010111010001011101010001110101'
+    .split('').forEach(function(data) {
+      stream.receive(data);
+    });
+
+    expect(stream.decode()).to.equal('hello world');
   });
 });
